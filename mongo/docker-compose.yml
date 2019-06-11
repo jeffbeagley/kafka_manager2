@@ -1,0 +1,17 @@
+version: "3"
+services:
+  mongodb:
+      image: mongo:4.0
+      ports:
+      - "27017:27017"
+      volumes:
+          - mongo:/data/db
+          - ./user.js:/docker-entrypoint-initdb.d/user.js:ro
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: gandalf
+        MONGO_INITDB_ROOT_PASSWORD: gfLKyB8x+8P#bscW
+      command: mongod --auth
+      
+volumes:
+    mongo:
+      driver: 'local'

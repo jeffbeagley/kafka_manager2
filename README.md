@@ -1,39 +1,23 @@
-# kafka_manager2
+# Kafka Web Manager
 
-## Project setup
-```
-npm install
-```
+Web interface to manage Kafka Connect configurations
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Connector configurations get persisted to a local database with unique ids to preserve history, bust cache, and return appropriate connector status regardless of kafka's state
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Project setup and Contribution
 
-### Run your tests
-```
-npm run test
-```
+#### Start MongoDB
 
-### Lints and fixes files
-```
-npm run lint
-```
+    docker-compose -f mongo/docker-compose.yml up -d
 
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
+#### Start API
 
-### Run your unit tests
-```
-npm run test:unit
-```
+    docker-compose -f api/docker-compose.yml up -d
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### Install NPM Dependencies from web/
+
+    npm install
+
+#### Start Website from web/
+
+    npm run serve
